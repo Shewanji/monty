@@ -8,7 +8,7 @@
 void pop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
-	if (arguments->head == NULL)
+	if (arguements->head == NULL)
 	{
 		dprintf(2, "L%d: can't pop an empty stack\n", line_number);
 		free_all_args();
@@ -16,5 +16,5 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 
 	delete_stack_node();
-	arguments->stack_length -= 1;
+	arguements->stack_length -= 1;
 }

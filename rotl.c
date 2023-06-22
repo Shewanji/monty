@@ -11,12 +11,12 @@ void rotl(stack_t **stack, unsigned int line_number)
 
 	(void) stack;
 	(void) line_number;
-	if (arguments->stack_length < 2)
+	if (arguements->stack_length < 2)
 		return;
 
-	tmp1 = arguments->head;
+	tmp1 = arguements->head;
 	tmp2 = tmp1->next;
-	arguments->head = tmp2;
+	arguements->head = tmp2;
 	while (tmp2)
 	{
 		if (tmp2->next == NULL)

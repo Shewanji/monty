@@ -9,13 +9,13 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 
-	if (arguments->head == NULL)
+	if (arguements->head == NULL)
 		return;
 
 	(void) line_number;
 	(void) stack;
 
-	tmp = arguments->head;
+	tmp = arguements->head;
 	while (tmp != NULL)
 	{
 		printf("%d\n", tmp->n);

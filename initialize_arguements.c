@@ -1,24 +1,24 @@
 #include "monty.h"
 
 /**
- * initialize_arguments - Initializes a pointer to
+ * initialize_arguements - Initializes a pointer to
  * arg_s structure.
  */
-void initialize_arguments(void)
+void initialize_arguements(void)
 {
-	arguments = malloc(sizeof(arg_t));
-	if (arguments == NULL)
+	arguements = malloc(sizeof(arg_t));
+	if (arguements == NULL)
 		malloc_failed();
 
-	arguments->instruction = malloc(sizeof(instruction_t));
-	if (arguments->instruction == NULL)
+	arguements->instruction = malloc(sizeof(instruction_t));
+	if (arguements->instruction == NULL)
 		malloc_failed();
 
-	arguments->stream = NULL;
-	arguments->head = NULL;
-	arguments->line = NULL;
-	arguments->n_tokens = 0;
-	arguments->line_number = 0;
-	arguments->stack_length = 0;
-	arguments->stack = 1;
+	arguements->stream = NULL;
+	arguements->head = NULL;
+	arguements->line = NULL;
+	arguements->n_tokens = 0;
+	arguements->line_number = 0;
+	arguements->stack_length = 0;
+	arguements->stack = 1;
 }

@@ -8,14 +8,14 @@ void free_tokens(void)
 {
 	int i = 0;
 
-	if (arguments->tokens == NULL)
+	if (arguements->tokens == NULL)
 		return;
 
-	while (arguments->tokens[i])
+	while (arguements->tokens[i])
 	{
-		free(arguments->tokens[i]);
+		free(arguements->tokens[i]);
 		i++;
 	}
-	free(arguments->tokens);
-	arguments->tokens = NULL;
+	free(arguements->tokens);
+	arguements->tokens = NULL;
 }

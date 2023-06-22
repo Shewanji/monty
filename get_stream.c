@@ -8,7 +8,7 @@
 void getting_stream_failed(char *fileName)
 {
 	dprintf(2, "Error: Can't open file %s\n", fileName);
-	free_arguments();
+	free_arguements();
 	exit(EXIT_FAILURE);
 }
 
@@ -25,8 +25,8 @@ void get_stream(char *fileName)
 	if (fd == -1)
 		getting_stream_failed(fileName);
 
-	arguments->stream = fdopen(fd, "r");
-	if (arguments->stream == NULL)
+	arguements->stream = fdopen(fd, "r");
+	if (arguements->stream == NULL)
 	{
 		close(fd);
 		getting_stream_failed(fileName);

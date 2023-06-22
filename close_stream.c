@@ -6,9 +6,9 @@
 
 void close_stream(void)
 {
-	if (arguments->stream == NULL)
+	if (arguements->stream == NULL)
 		return;
 
-	fclose(arguments->stream);
-	arguments->stream = NULL;
+	fclose(arguements->stream);
+	arguements->stream = NULL;
 }

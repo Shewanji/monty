@@ -11,14 +11,14 @@ void pchar(stack_t **stack, unsigned int line_number)
 	stack_t *tmp1;
 
 	(void) stack;
-	if (arguments->head == NULL)
+	if (arguements->head == NULL)
 	{
 		dprintf(2, "L%d: can't pchar, stack empty\n", line_number);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
 
-	tmp1 = arguments->head;
+	tmp1 = arguements->head;
 
 	if (tmp1->n < 0 || tmp1->n > 127)
 	{

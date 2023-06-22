@@ -1,32 +1,34 @@
 #include "monty.h"
 
 /**
- * rotl - rotates the stack to the top
+ * rotr - rotates the stack to the bottom
  * @stack: pointer to the stack
  * @line_number: line number where the mul function is called
  */
-void rotl(stack_t **stack, unsigned int line_number)
+
+void rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp1, *tmp2;
+	stack_t *tmp, *last;
 
 	(void) stack;
 	(void) line_number;
-	if (arguments->stack_length < 2)
+	if (arguements->stack_length < 2)
 		return;
 
-	tmp1 = arguments->head;
-	tmp2 = tmp1->next;
-	arguments->head = tmp2;
-	while (tmp2)
+	tmp = arguements->head;
+	while (tmp)
 	{
-		if (tmp2->next == NULL)
+		if (tmp->next == NULL)
 		{
-			tmp2->next = tmp1;
-			tmp1->next = NULL;
-			tmp1->prev = tmp2;
+			last = tmp;
 			break;
 		}
-
-		tmp2 = tmp2->next;
+		tmp = tmp->next;
 	}
+
+	last->prev->next = NULL;
+	last->next = arguements->head;
+	last->prev = NULL;
+
+	arguements->head = last;
 }

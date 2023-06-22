@@ -7,9 +7,9 @@
 int is_comment(void)
 {
 	if (
-		arguments->tokens &&
-		arguments->tokens[0] &&
-		arguments->tokens[0][0] == '#'
+		arguements->tokens &&
+		arguements->tokens[0] &&
+		arguements->tokens[0][0] == '#'
 	)
 		return (1);
 

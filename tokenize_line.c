@@ -9,30 +9,30 @@ void tokenize_line(void)
 	int i = 0;
 	char *delims = " \n", *token = NULL, *linecpy = NULL;
 
-	linecpy = malloc(sizeof(char) * (strlen(arguments->line) + 1));
-	strcpy(linecpy, arguments->line);
-	arguments->n_tokens = 0;
+	linecpy = malloc(sizeof(char) * (strlen(arguements->line) + 1));
+	strcpy(linecpy, arguements->line);
+	arguements->n_tokens = 0;
 	token = strtok(linecpy, delims);
 	while (token)
 	{
-		arguments->n_tokens += 1;
+		arguements->n_tokens += 1;
 		token = strtok(NULL, delims);
 	}
 
-	arguments->tokens = malloc(sizeof(char *) *
-			(arguments->n_tokens + 1));
-	strcpy(linecpy, arguments->line);
+	arguements->tokens = malloc(sizeof(char *) *
+			(arguements->n_tokens + 1));
+	strcpy(linecpy, arguements->line);
 	token = strtok(linecpy, delims);
 	while (token)
 	{
-		arguments->tokens[i] = malloc(sizeof(char) *
+		arguements->tokens[i] = malloc(sizeof(char) *
 				(strlen(token) + 1));
-		if (arguments->tokens[i] == NULL)
+		if (arguements->tokens[i] == NULL)
 			malloc_failed();
-		strcpy(arguments->tokens[i], token);
+		strcpy(arguements->tokens[i], token);
 		token = strtok(NULL, delims);
 		i++;
 	}
-	arguments->tokens[i] = NULL;
+	arguements->tokens[i] = NULL;
 	free(linecpy);
 }

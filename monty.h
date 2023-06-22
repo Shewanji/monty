@@ -40,19 +40,33 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct arg_s -hold variables
- * @stream: file that connects to the stream from file
- *@line: string which will be line of text read from stream 
+ * struct arg_s - hold variables
+ * @stream: File that connects to the stream from file
+ * @line: string which will be the line of text read from stream
+ * @line_number: for tracking current line number
+ * @tokens: used to store tokens from line
+ * @instruction: a valid instruction from a line
+ * @n_tokens; number of tokens created from line
+ * @head: head/top of the stack (doubly linked lists of struct stack_s)
+ * @stack_length: tracks the number of nodes in the stack
+ * @stack: used to determine whether to use stack/queue data structure
+ *
+ * Description: hold variables that will be used
+ * in different functions of the project as well as variables
+ * that will require memory allocation and freeing
  */
 typedef struct arg_s
 {
-	FILE *stream;
-	char *line;
+        FILE *stream;
+        char *line;
 	unsigned int line_number;
 	char **tokens;
 	int n_tokens;
 	instruction_t *instruction;
-}arg_t;
+	stack_t *head;
+	int stack_length;
+	int stack;
+} arg_t;
 
 extern arg_t *arguements;
 
@@ -62,7 +76,7 @@ void malloc_failed(void);
 void validate_arguements(int argc);
 void get_stream(char *fileName);
 void close_stream(void);
-void free_arguments();
+void free_arguements();
 void run_instruction(void);
 void tokenize_line(void);
 void free_tokens(void);

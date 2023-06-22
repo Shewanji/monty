@@ -7,34 +7,34 @@
 
 void free_head(void)
 {
-	if (arguments->head)
-		free_stack(arguments->head);
+	if (arguements->head)
+		free_stack(arguements->head);
 
-	arguments->head = NULL;
+	arguements->head = NULL;
 }
 
 /**
-* free_arguments - free memory allocated to arguments pointer
+* free_arguements - free memory allocated to arguments pointer
 */
 
-void free_arguments()
+void free_arguements()
 {
-	if (arguments == NULL)
+	if (arguements == NULL)
 		return;
 
-	if (arguments->instruction)
+	if (arguements->instruction)
 	{
-		free(arguments->instruction);
-		arguments->instruction = NULL;
+		free(arguements->instruction);
+		arguements->instruction = NULL;
 	}
 
 	free_head();
 
-	if (arguments->line)
+	if (arguements->line)
 	{
-		free(arguments->line);
-		arguments->line = NULL;
+		free(arguements->line);
+		arguements->line = NULL;
 	}
 
-	free(arguments);
+	free(arguements);
 }
